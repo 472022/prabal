@@ -337,3 +337,85 @@ body {
   margin: 1em 0 0 0.75em;
   color: white;
 }
+.venue-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Center the content */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.venue-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+.venue-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+/* Style for the map pin icon */
+.map-pin {
+  color: #ef4444;
+  font-size: 1.5rem; /* Adjust the size as needed */
+}
+
+.venue-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  margin: 0;
+  color: white;
+}
+
+.decorative-x {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: white;
+}
+
+.decorative-x span {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .venue-content h1 {
+    font-size: 2rem;
+  }
+  .venue-header h2 {
+    font-size: 1.2rem;
+  }
+  .decorative-x {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .venue-content h1 {
+    font-size: 1.5rem;
+  }
+  .venue-header h2 {
+    font-size: 1rem;
+  }
+  .decorative-x span {
+    font-size: 1.5rem;
+  }
+}
