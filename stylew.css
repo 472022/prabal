@@ -1,0 +1,171 @@
+.grid-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(55, 65, 81, 0.3) 1px, transparent 1px), /* Increased background visibility */
+        linear-gradient(to bottom, rgba(55, 65, 81, 0.3) 1px, transparent 1px); /* Increased background visibility */
+    background-size: 4rem 4rem;
+}
+
+.light-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(circle at 0 0, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%); */
+    pointer-events: none;
+}
+
+.sanskrit {
+    font-family: serif;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    margin-top: -70px;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0b14;
+    scroll-behavior: smooth;
+}
+
+.timer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 20px 0;
+}
+.timer span {
+    font-weight: bold;
+    color: #b69eff;
+}
+
+
+.glowButton {
+    position: relative;
+    margin: auto;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(160deg, #ff0000, #ec008c);
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 
+      0 0 0 0 #ec008c,
+      0.5rem 0.5rem 30px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.6s;
+    transform: skewX(-20deg);
+    margin-top: 10px;
+  }
+  
+  .glowButton:hover {
+    box-shadow: 
+      0 0 60px 2px #ec008c,
+      0.5rem 0.5rem 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .glowButton::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    border-radius: 10px;
+    background-image: linear-gradient(170deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    pointer-events: none;
+    transform: skewX(-20deg);
+  }
+
+
+  button {
+    width: auto;
+    position: relative;
+    height: auto;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    text-align: center;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    transition: 0.5s;
+    transform-origin: center;
+  }
+  
+  button::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    transition: 0.5s;
+  }
+  
+  button:hover::before, button:hover::after {
+    transform: scale(0)
+  }
+  
+  button:hover {
+    box-shadow: inset 0px 0px 25px #1479EA;
+  }
+.he {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+.trophy {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+  
+.trophy img {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+}
+.prize-amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    font-weight: 800;
+    color: #e6b31e;
+    letter-spacing: 0.05em;
+    transition: transform 0.3s ease;
+}
+  
+.prize-amount:hover {
+    transform: scale(1.05);
+}
