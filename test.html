@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="stylew.css">
+    <link rel="stylesheet" href="ani.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
     <title>Document</title>
 </head>
 <body>
@@ -66,11 +68,11 @@
       </div> -->
 
 
-    <section class="text-gray-100 body-font">
+    <section class="text-gray-100 body-font fadeIn">
         <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
           <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" style="height: 600px;" src="Prabal black.png">
           <div class="text-center lg:w-2/3 w-full">
-            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 sanskrit">" HACK IT TILL YOU MAKE IT "</h1>
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 neon sanskrit">" HACK IT TILL YOU MAKE IT "</h1>
             <p class="mb-8 leading-relaxed timer"><span id="days"></span> days <span id="hours"></span> hours <span id="minutes"></span> minutes <span id="seconds"></span> seconds
             </p>
             <div class="flex justify-center">
@@ -178,7 +180,7 @@
 
 
 
-09
+
 
 
 
@@ -190,51 +192,54 @@
           </div>
           <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
             
-            <ul class="timeline">
+            
+<ul class="timeline">
 
-              <!-- Item 1 -->
-              <li>
-                <div class="direction-r">
-                  <div class="flag-wrapper">
-                    <span class="flag" style="color: black;">REGISTRATION START</span>
-                    <span class="time-wrapper"><span class="time">10 FEB</span></span>
-                  </div>
-                  <div class="desc">Register on unstop and other platforms </div>
-                </div>
-              </li>
-              
-              <!-- Item 2 -->
-              <li>
-                <div class="direction-l">
-                  <div class="flag-wrapper">
-                    <span class="flag" style="color: black;">IDEA SUBMISSION</span>
-                    <span class="time-wrapper"><span class="time">30feb</span></span>
-                  </div>
-                  <div class="desc">Submit your ideas</div>
-                </div>
-              </li>
-          
-              <!-- Item 3 -->
-              <li>
-                <div class="direction-r">
-                  <div class="flag-wrapper">
-                    <span class="flag" style="color: black;">hackathon Starts</span>
-                    <span class="time-wrapper"><span class="time">11 April</span></span>
-                  </div>
-                  <div class="desc">A description of all the lectures and courses I have taken and my final degree?</div>
-                </div>
-              </li>
-                <!-- Item 2 -->
-              <li>
-                <div class="direction-l">
-                  <div class="flag-wrapper">
-                    <span class="flag " style="color: black;">HACKATHON END</span>
-                    <span class="time-wrapper"><span class="time">13 FEB</span></span>
-                  </div>
-                  <div class="desc">My first employer. All the stuff I've learned and projects I've been working on.</div>
-                </div>
-              </li>
-            </ul>
+	<!-- Item 1 -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag" style="color: black;">REGISTRATION STARTS</span>
+				<span class="time-wrapper"><span class="time">10th FEB</span></span>
+			</div>
+			<div class="desc">Register on Unstop.</div>
+		</div>
+	</li>
+  
+	<!-- Item 2 -->
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag" style="color: black;">IDEA SUBMISSION</span>
+				<span class="time-wrapper"><span class="time">30 FEB</span></span>
+			</div>
+			<div class="desc">Submit your idea</div>
+		</div>
+	</li>
+
+	<!-- Item 3 -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag" style="color: black;">HACKATHON STARTS</span>
+				<span class="time-wrapper"><span class="time">11 APRIL</span></span>
+			</div>
+			<div class="desc">CODE COMPETE ENJOY</div>
+		</div>
+	</li>
+
+  <li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag" style="color: black;">HACKATHON ENDS</span>
+				<span class="time-wrapper"><span class="time">13 APRIL</span></span>
+			</div>
+			<div class="desc"></div>
+		</div>
+	</li>
+  
+  
+</ul>
 
           </div>
         </div>
@@ -283,7 +288,7 @@
               <img src="Prabal black.png" alt="" style="height: auto; width: auto;">
               <span class="ml-3 text-xl"></span>
             </a>
-            <p class="mt-2 text-sm text-gray-100">"Hack It Till You Make It"</p>
+            <p class="mt-2 text-sm text-gray-100 ">"Hack It Till You Make It"</p>
           </div>
           <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
             <div class="lg:w-1/4 md:w-1/2 w-full px-4">
@@ -451,6 +456,27 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("content").style.display = "block";
     };
 });
+
+
+// Intersection Observer for Timeline Items
+document.addEventListener("DOMContentLoaded", () => {
+      const timelineItems = document.querySelectorAll(".timeline li");
+      const observerOptions = {
+        threshold: 0.3 // Trigger when 30% of the element is visible
+      };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target); // Animate once
+          }
+        });
+      }, observerOptions);
+
+      timelineItems.forEach(item => {
+        observer.observe(item);
+      });
+    });
 
 
 </script>

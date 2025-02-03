@@ -1,0 +1,46 @@
+.neon {
+    color: #fff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+    animation: neonFlicker 1.5s infinite alternate;
+  }
+  @keyframes neonFlicker {
+    from {
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+    }
+    to {
+      text-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 50px #0ff;
+    }
+  }
+
+
+
+  .fadeIn {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInAnimation 1s forwards;
+  }
+  @keyframes fadeInAnimation {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+
+  .timeline li {
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+  }
+  /* Depending on direction, set initial offset */
+  .timeline li.direction-r {
+    transform: translateX(-50px);
+  }
+  .timeline li.direction-l {
+    transform: translateX(50px);
+  }
+  /* When timeline item enters viewport */
+  .timeline li.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
